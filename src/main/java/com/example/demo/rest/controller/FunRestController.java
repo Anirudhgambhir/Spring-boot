@@ -1,7 +1,6 @@
 package com.example.demo.rest.controller;
 
 import com.example.demo.rest.Coach;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +12,7 @@ public class FunRestController {
     private final Coach coach;
 
     @Autowired
-    public FunRestController(@Qualifier("cricketCoachImpl") Coach coach) {
+    public FunRestController(@Qualifier("baseballCoachImpl") Coach coach) {
         this.coach = coach;
     }
 
