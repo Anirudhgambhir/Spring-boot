@@ -9,11 +9,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+//@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 @Log4j2
 public class FunRestController {
 
     private final Coach coach;
+
+    public FunRestController(@Qualifier("getSwimCoach") Coach coach) {
+        this.coach = coach;
+    }
 
     @GetMapping("/dailyWorkout")
     public String getDailyWorkout() {
